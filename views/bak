@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+body {
+/*
+  background: #eee;
+*/
+/* bg-slate-200	*/
+background-color: rgb(226 232 240);
+}
+
+.tocIdShow{
+/*
+  display: inline;
+*/
+  display: none;
+}
+
+/*
+.data-record > p:last-child{
+  margin-bottom: 0;
+  background: #eee;
+}
+*/
+.data-textarea{
+  height: 150px;
+}
+
+.data-item-a:hover, .data-item-b  {
+    background-color: rgb(125 211 252);
+}
+
+.bg-sky-300{
+  background-color: rgb(125 211 252);
+}
+
+.logo {
+    line-height: 1.5;
+}
+
+.vh-50 {
+    height: 50vh;
+}
+
+.vh-min-50 {
+    min-height: 500px;
+}
