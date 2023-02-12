@@ -16,6 +16,39 @@ Flight::set('blade', $blade);
 require_once '../libs/idiorm.php';
 ORM::configure('sqlite:./data.db');
 
+Flight::route('/megaMenus', function(){//################################################## megaMenu
+    $rows = ORM::for_table('megaMenu')->find_many();
+
+    $blade = Flight::get('blade');
+    echo $blade->run("megaMenus",array("rows"=>$rows)); 
+});
+
+Flight::route('/megaMenuInsExe', function(){//################################################## catInsExe
+    $row = ORM::for_table('megaMenu')->create();
+
+    $row->title = Flight::request()->data->title;
+    $row->save();
+    Flight::redirect('/megaMenus');
+});
+
+Flight::route('/megaMenuTitleUpd/@id', function($id){//################################################## catUpd
+  $row = ORM::for_table('megaMenu')->find_one($id);
+
+  $blade = Flight::get('blade');
+  echo $blade->run("megaMenuTitleUpd",array("row"=>$row)); 
+});
+
+Flight::route('/megaMenuTitleUpdExe', function(){//################################################## catUpdExe
+    $id = Flight::request()->data->id;
+    $row = ORM::for_table('megaMenu')->find_one($id);
+    $row->title = Flight::request()->data->title;
+    $row->save();
+
+    Flight::redirect('/megaMenus');
+});
+
+
+
 Flight::route('/megaMenu/@id', function($id){//################################################## megaMenu
 
     $row = ORM::for_table('megaMenu')->find_one($id);

@@ -7,6 +7,10 @@
     <ul class="nav">
 
       <li class="nav-item">
+        <a class="nav-link" href='/221224/megaMenus'>megaMenu</a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href='/221224/toc'>tocへ</a>
       </li>
       <li class="nav-item">

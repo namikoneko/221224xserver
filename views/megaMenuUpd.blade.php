@@ -5,6 +5,7 @@
         <form class="upd-form" action='/221224/megaMenuUpdExe' method='post'>
             <input type='hidden' name='id' value={{$row["id"]}}>
 	    <!--
+
             <p>
                 <label for="sort">sort:</label>
                 <input type='text' name='sort' value={{$row["sort"]}} id="sort" class="form-control">
