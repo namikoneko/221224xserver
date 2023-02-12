@@ -39,7 +39,7 @@ Flight::route('/megaMenuUpdExe', function(){//##################################
     $row->html = Flight::request()->data->html;
     $row->save();
 
-    Flight::redirect('/megaMenu');
+    Flight::redirect('/megaMenu/' . $id);
 });
 
 Flight::route('/toc', function(){//################################################## toc
