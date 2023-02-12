@@ -1,1 +1,1 @@
-drop table inTag;
+drop table magaMenu;
