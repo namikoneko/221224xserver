@@ -16,6 +16,32 @@ Flight::set('blade', $blade);
 require_once '../libs/idiorm.php';
 ORM::configure('sqlite:./data.db');
 
+Flight::route('/megaMenu', function(){//################################################## megaMenu
+
+    $row = ORM::for_table('megaMenu')->find_one(1);
+
+    $blade = Flight::get('blade');
+    echo $blade->run("megaMenu",array("row"=>$row)); //
+});
+
+Flight::route('/megaMenuUpd/@id', function($id){//################################################## megaMenu
+
+  $row = ORM::for_table('megaMenu')->find_one($id);
+
+  $blade = Flight::get('blade');
+  echo $blade->run("megaMenuUpd",array("row"=>$row)); 
+});
+
+Flight::route('/megaMenuUpdExe', function(){//################################################## megaMenuUpdExe
+    $id = Flight::request()->data->id;
+    $row = ORM::for_table('megaMenu')->find_one($id);
+    $row->css = Flight::request()->data->css;
+    $row->html = Flight::request()->data->html;
+    $row->save();
+
+    Flight::redirect('/megaMenu');
+});
+
 Flight::route('/toc', function(){//################################################## toc
 
     $rows = ORM::for_table('toc')->order_by_desc('sort')->find_array();
