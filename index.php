@@ -16,9 +16,9 @@ Flight::set('blade', $blade);
 require_once '../libs/idiorm.php';
 ORM::configure('sqlite:./data.db');
 
-Flight::route('/megaMenu', function(){//################################################## megaMenu
+Flight::route('/megaMenu/@id', function($id){//################################################## megaMenu
 
-    $row = ORM::for_table('megaMenu')->find_one(1);
+    $row = ORM::for_table('megaMenu')->find_one($id);
 
     $blade = Flight::get('blade');
     echo $blade->run("megaMenu",array("row"=>$row)); //

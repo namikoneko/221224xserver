@@ -16,7 +16,7 @@
 <div class="container gray-300">
 
 <p class="mt-2">
-  <span class="px-2 mt-2 inline-block"><a href='./megaMenuUpd/{{$row["id"]}}'>update</a></span>
+  <span class="px-2 mt-2 inline-block"><a href='../megaMenuUpd/{{$row["id"]}}'>update</a></span>
 </p>
 
     {!!$row["html"]!!}
